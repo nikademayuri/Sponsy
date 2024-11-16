@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsy Sign-In</title>
+    <link rel="stylesheet" href="sign_in_form.css">
+</head>
+<body>
+
+     <!-- Navbar Section -->
+     <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#">Sponsy</a>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="whysponsy.html" class="nav-link "> Why Sponsy</a></li>
+                <li><a href="blog.html" class="nav-link">Discover Clubs/Sponsor</a></li>
+                <li><a href="contact_us.html" class="nav-link">Contact Us</a></li>
+            </ul>
+            <!-- Contact Button -->
+            <a href="sign_in _form.html">
+                <button class="contact-btn">Sign Up</button>
+            </a>
+            
+        </div>
+    </nav>
+
+    <!-- Sign-In Form Section -->
+    <section class="sign-in-section">
+        <h1>Welcome Back!</h1>
+        <p>Login to continue</p>
+        <form id="signInForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+            <div class="options">
+                <label><input type="checkbox" id="rememberMe"> Remember me</label>
+                <a href="#" id="forgotPassword">Forgot password?</a>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <p>Don’t have an account? <a href="#">Sign Up</a></p>
+        </form>
+        <div class="social-login">
+            <p>Or via social media</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-google"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-login">
+        <div class="footer-login-container">
+            <div class="footer-logo">
+                <h2>Sponsy</h2>
+                <p>Bridging the Gap Between Visionary Clubs and Bold Sponsors</p>
+                <p>@Sponsy</p>
+            </div>
+            <div class="footer-links">
+                <h4>About us</h4>
+                <ul>
+                    <li><a href="#">Read Success Stories</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact us</h4>
+                <p>SponsyClubs@gmail.com</p>
+                <p>SponsyEvents@gmail.com</p>
+                <p>+91 9370792487</p>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 Learn All rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for form submission
+        document.getElementById('signInForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username && password) {
+                alert(`Welcome back, ${username}!`);
+            } else {
+                alert('Please enter both username and password.');
+            }
+        });
+
+        // Toggle password visibility
+        document.getElementById('forgotPassword').addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('Password recovery is currently unavailable.');
+        });
+    </script>
+</body>
+</html>

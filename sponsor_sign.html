@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsor Sign-Up</title>
+    <link rel="stylesheet" href="sponsor_sign.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#">Sponsy</a>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link active"> Why Sponsy</a></li>
+                <li><a href="#" class="nav-link">Discover Clubs/Sponsor</a></li>
+                <li><a href="#" class="nav-link">Contact Us</a></li>
+            </ul>
+            <!-- Contact Button -->
+            <button class="contact-btn">Sign Up</button>
+        </div>
+    </nav>
+
+<!-- Form Section -->
+<section class="form-section">
+    <h2>Company Information</h2>
+    <form id="sponsorForm">
+        <!-- Company Information -->
+        <input type="text" id="companyName" placeholder="Company Name" required>
+        <input type="text" id="contactName" placeholder="Contact Person's Name" required>
+        <input type="text" id="jobTitle" placeholder="Job Title" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="url" id="website" placeholder="Company Website">
+        <input type="text" id="address" placeholder="Company Address">
+
+        <h2>Sponsorship Details</h2>
+        <input type="text" id="goals" placeholder="Sponsorship Goals" required>
+        <input type="text" id="sponsorshipType" placeholder="Preferred Sponsorship Type">
+        <input type="number" id="budget" placeholder="Budget for Sponsorship" required>
+        <input type="text" id="eventType" placeholder="Event Type Interested In">
+
+        <h2>Branding and Promotional Opportunities</h2>
+        <input type="text" id="brandingOpportunities" placeholder="Preferred Branding Opportunities">
+        <input type="text" id="sponsorBenefits" placeholder="Expectation of Sponsor Benefits">
+        <textarea id="additionalInfo" placeholder="Additional Information"></textarea>
+        <textarea id="previousExperience" placeholder="Previous Sponsorship Experience"></textarea>
+        <textarea id="comments" placeholder="Additional Notes or Comments"></textarea>
+
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer-section">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="logo.png" alt="Sponsy Logo">
+            <p>Bridging the Gap Between Visionary Clubs and Bold Sponsors</p>
+            <p>@Sponsy</p>
+        </div>
+        <div class="footer-links">
+            <h4>About Us</h4>
+            <ul>
+                <li><a href="#">Need Success Stories</a></li>
+                <li><a href="#">Learn More</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>SponsyClub@gmail.com</p>
+            <p>SponsyEvents@gmail.com</p>
+            <p>+91 9870742487</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2024 Lorem. All Rights Reserved</p>
+    </div>
+</footer>
+
+<!-- JavaScript Code -->
+<script>
+    // Form Validation
+    const form = document.getElementById('sponsorForm');
+
+    form.addEventListener('submit', function(event) {
+        const companyName = document.getElementById('companyName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const budget = document.getElementById('budget').value.trim();
+
+        // Simple validation checks
+        if (companyName === '' || email === '' || phone === '' || budget === '') {
+            alert('Please fill out all required fields.');
+            event.preventDefault();
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            alert('Please enter a valid email address.');
+            event.preventDefault();
+            return;
+        }
+
+        if (!validatePhone(phone)) {
+            alert('Please enter a valid phone number.');
+            event.preventDefault();
+        }
+    });
+
+    // Email validation function
+    function validateEmail(email) {
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/;
+        return emailPattern.test(email);
+    }
+
+    // Phone number validation function
+    function validatePhone(phone) {
+        const phonePattern = /^\+?[0-9]{7,14}$/;
+        return phonePattern.test(phone);
+    }
+</script>
+
+</body>
+</html>

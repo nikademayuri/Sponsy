@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="create_account.css">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#">Sponsy</a>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="whysponsy.html" class="nav-link "> Why Sponsy</a></li>
+                <li><a href="blog.html" class="nav-link">Discover Clubs/Sponsor</a></li>
+                <li><a href="contact_us.html" class="nav-link">Contact Us</a></li>
+            </ul>
+            <!-- Contact Button -->
+            <a href="#">
+                <button class="contact-btn">Sign Up</button>
+            </a>
+            
+        </div>
+    </nav>
+
+    <main>
+        <h2>Create Account Now!</h2>
+        <form id="createAccountForm">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Enter your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <label for="phone">Phone No</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+            <button type="button" onclick="validateForm()">Login</button>
+        </form>
+
+        <p>Or via social media</p>
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="google.png" alt="Google"></a>
+            <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-login">
+        <div class="footer-login-container">
+            <div class="footer-logo">
+                <h2>Sponsy</h2>
+                <p>Bridging the Gap Between Visionary Clubs and Bold Sponsors</p>
+                <p>@Sponsy</p>
+            </div>
+            <div class="footer-links">
+                <h4>About us</h4>
+                <ul>
+                    <li><a href="#">Read Success Stories</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact us</h4>
+                <p>SponsyClubs@gmail.com</p>
+                <p>SponsyEvents@gmail.com</p>
+                <p>+91 9370792487</p>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 Learn All rights Reserved</p>
+        </div>
+    </footer>
+
+    <script >
+        function validateForm() {
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const phone = document.getElementById('phone').value;
+
+    if (fullName === "" || email === "" || password === "" || phone === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return;
+    }
+
+    if (!validatePhone(phone)) {
+        alert("Please enter a valid phone number.");
+        return;
+    }
+
+    alert("Form submitted successfully!");
+}
+
+function validateEmail(email) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+}
+
+function validatePhone(phone) {
+    const phonePattern = /^\d{10}$/;
+    return phonePattern.test(phone);
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Organizer Registration Form</title>
+    <link rel="stylesheet" href="event_registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#">Sponsy</a>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link active"> Why Sponsy</a></li>
+                <li><a href="#" class="nav-link">Discover Clubs/Sponsor</a></li>
+                <li><a href="#" class="nav-link">Contact Us</a></li>
+            </ul>
+            <!-- Contact Button -->
+            <button class="contact-btn">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Registration Form Section -->
+    <section class="form-container">
+        <h2>Event Organizer Registration Form</h2>
+        <form id="eventRegistrationForm">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="text" placeholder="Organization Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="text" placeholder="Event Type" required>
+            <input type="date" placeholder="Event Date" required>
+            <input type="number" placeholder="Expected Number of Attendees" required>
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-login">
+        <div class="footer-login-container">
+            <div class="footer-logo">
+                <h2>Sponsy</h2>
+                <p>Bridging the Gap Between Visionary Clubs and Bold Sponsors</p>
+                <p>@Sponsy</p>
+            </div>
+            <div class="footer-links">
+                <h4>About us</h4>
+                <ul>
+                    <li><a href="#">Read Success Stories</a></li>
+                    <li><a href="#">Learn More</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact us</h4>
+                <p>SponsyClubs@gmail.com</p>
+                <p>SponsyEvents@gmail.com</p>
+                <p>+91 9370792487</p>
+            </div>
+        </div>
+        <div class="footer-social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 Learn All rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Event Registration Form Script
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('eventRegistrationForm');
+
+    // Function to validate input fields
+    function validateForm() {
+        const inputs = form.querySelectorAll('input');
+        let isValid = true;
+
+        inputs.forEach((input) => {
+            if (input.value.trim() === '') {
+                input.style.borderColor = '#ff4c4c'; // Highlight invalid fields
+                isValid = false;
+            } else {
+                input.style.borderColor = '#d3e3e8'; // Reset to default
+            }
+        });
+
+        return isValid;
+    }
+
+    // Form submission handler
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (validateForm()) {
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Mock form submission
+            console.log('Form Data:', data);
+
+            // Simulate successful submission
+            alert('Registration successful!');
+            form.reset();
+        } else {
+            alert('Please fill in all the required fields.');
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
